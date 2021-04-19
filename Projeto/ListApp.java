@@ -39,9 +39,9 @@ class ListFrame extends JFrame {
                     int h = rand.nextInt(50);
                     int anguloInicial = rand.nextInt(360);
                     int anguloArc = rand.nextInt(360);
+                    Color contorno = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
+                    Color fill = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
                     
-                  Color contorno = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
-                   Color fill = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
                     if (evt.getKeyChar() == 'r') {
                         Rect r = new Rect(x,y, w,h, contorno, fill);
                         figs.add(r);
