@@ -4,10 +4,18 @@ import java.awt.Graphics;
 import java.awt.Color;
 
 public abstract class Figure {
-      int x, y;
-      int w, h;
-      Color contorno, fundo;
+      public int x, y;
+      public int w, h;
+      public Color contorno, fundo;
+      
+      
+      
+      public void drag (int dx, int dy) {
+        x += dx;
+        y += dy;
+    }
 
     public abstract void paint (Graphics g);
+    
       
 }
