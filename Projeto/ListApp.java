@@ -19,7 +19,11 @@ class ListApp {
 class ListFrame extends JFrame {
     ArrayList<Figure> figs = new ArrayList<Figure>();
     Random rand = new Random();
+    
+Figure focus = null;
+Point ponto;
 
+   
     ListFrame () {
         this.addWindowListener (
             new WindowAdapter() {
@@ -28,7 +32,48 @@ class ListFrame extends JFrame {
                 }
             }
         ); 
-
+        this.addMouseListener
+        (
+            new MouseAdapter()
+            {
+                public void mousePressed(MouseEvent evt)
+                {    Point ponto = getMousePosition();
+                     int px = ponto.x; 
+                     int py = ponto.y;
+                 
+                    focus = null;
+                    for (Figure fig: figs)
+                    {
+                        if((px >= fig.x && px <= (fig.w+fig.x)) && (py >= fig.y && py <= (fig.y+fig.h)))     
+                        {   focus = fig;
+                            figs.remove(focus);
+						    figs.add(focus);
+                            repaint();
+                            break;
+                        }
+                        else
+                        { 
+                            focus = null;
+                            repaint();
+                        }
+                    }
+                }
+            }
+        );
+        
+        this.addMouseMotionListener
+        ( 
+            new MouseMotionAdapter()
+            {
+                public void mouseDragged (MouseEvent evt)
+                {       if (focus != null) 
+                        {   focus.x = evt.getX() - focus.w/2;
+        			        focus.y = evt.getY() - focus.h/2;
+        			        repaint();
+                        }
+                    }
+                }
+            );
               
         this.addKeyListener (
             new KeyAdapter() {
@@ -48,11 +93,68 @@ class ListFrame extends JFrame {
                     }  if (evt.getKeyChar() == 'e') {
                         figs.add(new Ellipse(x, y,w, h,contorno, fill));
                     }
-                        if (evt.getKeyChar() == 'a') {
+                       if (evt.getKeyChar() == 'a') {
                         figs.add(new Arc(x, y,w, h,contorno, fill, anguloInicial, anguloArc));
-                    }  else if (evt.getKeyChar() == 't') {
+                    }  if (evt.getKeyChar() == 't') {
                          figs.add(new Trian(x, y, w, h, contorno, fill));
                     }
+                       if(evt.getKeyCode() == 127){
+                                figs.remove(focus);
+                                focus = null;
+                    }
+                       if(evt.getKeyChar() == '-'){
+						for(Figure fig: figs){
+                             if(focus == fig){
+								fig.w--;
+								fig.h--;
+						   	}
+						  }
+					   }
+						 
+					   if(evt.getKeyChar() == '+'){
+				        for(Figure fig: figs){
+                             if(focus == fig){
+								fig.w++;
+								fig.h++;
+						   }
+						 }
+					   } 
+					   if (evt.getKeyCode() == 37) {
+					    for(Figure fig: figs){
+					         if(focus == fig){
+					            fig.x -= 5;     
+					         }
+					    }
+					   
+					   }
+					   
+					   if (evt.getKeyCode() == 38) {
+					    for(Figure fig: figs){
+					         if(focus == fig){
+					            fig.y -= 5;     
+					         }
+					    }
+					   
+					   }
+					   
+					   if (evt.getKeyCode() == 39) {
+					    for(Figure fig: figs){
+					         if(focus == fig){
+					            fig.x += 5;     
+					         }
+					    }
+					   
+					   }
+					   
+					   if (evt.getKeyCode() == 40) {
+					    for(Figure fig: figs){
+					         if(focus == fig){
+					            fig.y += 5;     
+					         }
+					    }
+					   
+					   }
+					
                     repaint();
                 }
             }
@@ -66,6 +168,12 @@ class ListFrame extends JFrame {
         super.paint(g);
         for (Figure fig: this.figs) {
             fig.paint(g);
+            Graphics2D g2d = (Graphics2D) g;
+            
+            if (focus != null)
+        {       g2d.setColor(Color.RED);
+                g2d.drawRect(focus.x-1, focus.y-1, focus.w+1, focus.h+2);
+            }
             
         }
         
