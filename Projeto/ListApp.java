@@ -47,7 +47,7 @@ Point ponto;
                         if((px >= fig.x && px <= (fig.w+fig.x)) && (py >= fig.y && py <= (fig.y+fig.h)))     
                         {   focus = fig;
                             figs.remove(focus);
-						    figs.add(focus);
+			    figs.add(focus);
                             repaint();
                             break;
                         }
@@ -68,8 +68,8 @@ Point ponto;
                 public void mouseDragged (MouseEvent evt)
                 {       if (focus != null) 
                         {   focus.x = evt.getX() - focus.w/2;
-        			        focus.y = evt.getY() - focus.h/2;
-        			        repaint();
+        		    focus.y = evt.getY() - focus.h/2;
+        		    repaint();
                         }
                     }
                 }
@@ -103,57 +103,57 @@ Point ponto;
                                 focus = null;
                     }
                        if(evt.getKeyChar() == '-'){
-						for(Figure fig: figs){
+		         for(Figure fig: figs){
                              if(focus == fig){
-								fig.w--;
-								fig.h--;
-						   	}
-						  }
-					   }
+				fig.w--;
+				fig.h--;
+			      }
+			}
+		       }
 						 
-					   if(evt.getKeyChar() == '+'){
-				        for(Figure fig: figs){
-                             if(focus == fig){
-								fig.w++;
-								fig.h++;
-						   }
-						 }
-					   } 
-					   if (evt.getKeyCode() == 37) {
-					    for(Figure fig: figs){
-					         if(focus == fig){
-					            fig.x -= 5;     
-					         }
-					    }
+			if(evt.getKeyChar() == '+'){
+			  for(Figure fig: figs){
+                              if(focus == fig){
+				fig.w++;
+				fig.h++;
+			       }
+			   }
+			} 
+		        if (evt.getKeyCode() == 37) {
+			  for(Figure fig: figs){
+			      if(focus == fig){
+			        fig.x -= 5;     
+			      }
+			  }
 					   
-					   }
+			}
 					   
-					   if (evt.getKeyCode() == 38) {
-					    for(Figure fig: figs){
-					         if(focus == fig){
-					            fig.y -= 5;     
-					         }
-					    }
+			if (evt.getKeyCode() == 38) {
+			  for(Figure fig: figs){
+			      if(focus == fig){
+			        fig.y -= 5;     
+			      }
+			   }
 					   
-					   }
+			}
 					   
-					   if (evt.getKeyCode() == 39) {
-					    for(Figure fig: figs){
-					         if(focus == fig){
-					            fig.x += 5;     
-					         }
-					    }
+			if (evt.getKeyCode() == 39) {
+			  for(Figure fig: figs){
+			      if(focus == fig){
+				fig.x += 5;     
+			      }
+			  }
 					   
-					   }
+			}
 					   
-					   if (evt.getKeyCode() == 40) {
-					    for(Figure fig: figs){
-					         if(focus == fig){
-					            fig.y += 5;     
-					         }
-					    }
+			if (evt.getKeyCode() == 40) {
+			  for(Figure fig: figs){
+			      if(focus == fig){
+			        fig.y += 5;     
+			      }
+			  }
 					   
-					   }
+			}
 					
                     repaint();
                 }
