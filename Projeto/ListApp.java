@@ -44,7 +44,7 @@ Point ponto;
                     focus = null;
                     for (Figure fig: figs)
                     {
-                        if((px >= fig.x && px <= (fig.w+fig.x)) && (py >= fig.y && py <= (fig.y+fig.h)))     
+                        if (fig.clicked(evt.getX(), evt.getY()))    
                         {   focus = fig;
                             figs.remove(focus);
 			    figs.add(focus);
