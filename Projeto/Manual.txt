@@ -14,7 +14,7 @@ Seta para a esquerda: Movimenta a figura para a esquerda
 Seta para a direita: Movimenta a figura para a direita
 
 Tecla 1: Muda a cor da figura selecionada para azul
-Tecla 2: Muda a cor da figura selecionada para amarelo.
+Tecla 2: Muda a cor da figura selecionada para amarelo
 Tecla 3: Muda a cor da figura selecionada para verde.
 Tecla 4: Muda a cor da figura selecionada para vermelho
 Tecla 5: Muda a cor da figura selecionada para laranja
