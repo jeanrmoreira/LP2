@@ -181,88 +181,88 @@ Point pos = null;
                                 focus = null;
                     }
                        if(evt.getKeyChar() == '-'){
-						for(Figure fig: figs){
-                             if(focus == fig){
-								fig.w--;
-								fig.h--;
-						   	}
-						  }
-					   }
+			       for(Figure fig: figs){
+				       if(focus == fig){
+					       fig.w--;
+					       fig.h--;
+				       }
+			       }
+		       }
 						 
-					   if(evt.getKeyChar() == '+'){
-				        for(Figure fig: figs){
-                             if(focus == fig){
-								fig.w++;
-								fig.h++;
-						   }
-						 }
-					   } 
-					   if (evt.getKeyCode() == 37) {
-					    for(Figure fig: figs){
-					         if(focus == fig){
-					            focus.drag(-5,0);     
-					         }
-					    }
+			if(evt.getKeyChar() == '+'){
+				for(Figure fig: figs){
+					if(focus == fig){
+						fig.w++;
+						fig.h++;
+					}
+				}
+			} 
+			if (evt.getKeyCode() == 37) {
+				for(Figure fig: figs){
+					if(focus == fig){
+						focus.drag(-5,0);     
+					}
+				}
 					   
-					   }
+			}
 					   
-					   if (evt.getKeyCode() == 38) {
-					    for(Figure fig: figs){
-					         if(focus == fig){
-					            focus.drag(0,-5); 
-					         }
-					    }
+			if (evt.getKeyCode() == 38) {
+				for(Figure fig: figs){
+					if(focus == fig){
+						focus.drag(0,-5); 
+					}
+				}
 					   
-					   }
+			}
 					   
-					   if (evt.getKeyCode() == 39) {
-					    for(Figure fig: figs){
-					         if(focus == fig){
-					           focus.drag(5,0); 
-					         }
-					    }
+			if (evt.getKeyCode() == 39) {
+				for(Figure fig: figs){
+					if(focus == fig){
+						focus.drag(5,0); 
+					}
+				}
 					   
-					   }
+			}
 					   
-					   if (evt.getKeyCode() == 40) {
-					    for(Figure fig: figs){
-					         if(focus == fig){
-					            focus.drag(0,5); 
-					         }
-					    }
+			if (evt.getKeyCode() == 40) {
+				for(Figure fig: figs){
+					if(focus == fig){
+						focus.drag(0,5); 
+					}
+				}
 					   
-					   }
-					   if(evt.getKeyChar() == '1' && focus!=null ){
-                        focus.fundo=Color.blue;
+			}
+			if(evt.getKeyChar() == '1' && focus!=null ){
+				focus.fundo=Color.blue;
                        }
-					   if(evt.getKeyChar() == '2' && focus!=null ){
-                        focus.fundo=Color.yellow;
+			if(evt.getKeyChar() == '2' && focus!=null ){
+				focus.fundo=Color.yellow;
                        }
                        if(evt.getKeyChar() == '3' && focus!=null ){
-                        focus.fundo=Color.green;
+			       focus.fundo=Color.green;
                        }
                        if(evt.getKeyChar() == '4' && focus!=null ){
-                        focus.fundo=Color.red;
+			       focus.fundo=Color.red;
                        }
                        if(evt.getKeyChar() == '5' && focus!=null ){
-                        focus.fundo=Color.orange;
+			       focus.fundo=Color.orange;
                        }
                        if(evt.getKeyChar() == '6' && focus!=null ){
-                        focus.fundo=Color.pink;
+			       focus.fundo=Color.pink;
                        }
                        if(evt.getKeyChar() == '7' && focus!=null ){
-                        focus.fundo=Color.gray;
+			       focus.fundo=Color.gray;
                        }
                        if(evt.getKeyChar() == '8' && focus!=null ){
-                        focus.fundo=Color.black;
+			       focus.fundo=Color.black;
                        }
                        if(evt.getKeyChar() == '9' && focus!=null ){
-                        focus.fundo=Color.white;
-                       }
-                    repaint();
-                }
-            }
-        );
+			       focus.fundo=Color.white;
+		       }
+			repaint();
+		}
+	    }
+	);
 
         this.setTitle("Lista de Figuras");
         this.setSize(350, 350);
@@ -274,13 +274,12 @@ Point pos = null;
             fig.paint(g, true);
             Graphics2D g2d = (Graphics2D) g;
             
-            if (focus != null)
-        {       g2d.setColor(Color.RED);
-               
-                g2d.drawRect(focus.x-1, focus.y-1, focus.w+1, focus.h+2);
-            }
+            if (focus != null){
+		    g2d.setColor(Color.RED);
+		    g2d.drawRect(focus.x-1, focus.y-1, focus.w+1, focus.h+2);
+	    }
             
-        }
+	}
         for (Button but: this.buts){
         but.paint(g, but==focus_but);
         }
