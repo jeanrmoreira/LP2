@@ -1,0 +1,35 @@
+
+Tecla r: Cria um retângulo
+Tecla e: Cria uma elipse
+Tecla a: Cria um arco
+Tecla T: Cria um triângulo
+
+Tecla delete: Deleta a figura selecionada.
+Tecla +: Aumenta o tamanho da figura selecionada.
+Tecla -: Diminui o tamanho da figura selecionada.
+
+Seta para cima: Movimenta a figura para cima
+Seta para baixo: Movimenta a figura para baixo
+Seta para a esquerda: Movimenta a figura para a esquerda
+Seta para a direita: Movimenta a figura para a direita
+
+Tecla 1: Muda a cor da figura selecionada para azul
+Tecla 2: Muda a cor da figura selecionada para amarelo.
+Tecla 3: Muda a cor da figura selecionada para verde.
+Tecla 4: Muda a cor da figura selecionada para vermelho
+Tecla 5: Muda a cor da figura selecionada para laranja
+Tecla 6: Muda a cor da figura selecionada para rosa
+Tecla 7: Muda a cor da figura selecionada para cinza
+Tecla 8: Muda a cor da figura selecionada para preto
+Tecla 9: Muda a cor da figura selecionada para branco
+
+
+
+
+
+
+.
+
+
+
+
