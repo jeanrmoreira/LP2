@@ -21,7 +21,7 @@ public class Ellipse extends Figure {
             this.w, this.h, this.x, this.y);
     }
 
-    public void paint (Graphics g) {
+    public void paint (Graphics g, boolean focused) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(fundo);
         g2d.fill(new Ellipse2D.Double(this.x, this.y, this.w, this.h));
