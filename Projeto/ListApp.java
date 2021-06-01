@@ -18,14 +18,14 @@ class ListApp {
 }
 
 class ListFrame extends JFrame {
-    ArrayList<Figure> figs = new ArrayList<Figure>();
-    ArrayList<Button> buts = new ArrayList<Button>();
-    Random rand = new Random();
+    private ArrayList<Figure> figs = new ArrayList<Figure>();
+    private ArrayList<Button> buts = new ArrayList<Button>();
+    private Random rand = new Random();
 
-Button focus_but = null;    
-Figure focus = null;
-Point ponto;
-Point pos = null;
+    private Button focus_but = null;    
+    private Figure focus = null;
+    private Point ponto;
+    private Point pos = null;
 
 
    
