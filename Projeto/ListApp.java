@@ -79,16 +79,16 @@ class ListFrame extends JFrame {
                     
                      
                      if(focus_but != null && !((evt.getX() >= 20 && evt.getX() <= 60 && evt.getY() >= 65 && evt.getY() <= 185))) {
-		                if (focus_but.idx == 1) {
+		                if (focus_but.getIdx() == 1) {
 			                figs.add(new Rect(evt.getX(),evt.getY(), rand.nextInt(50),rand.nextInt(50),contorno, fill));
 						} 
-						else if (focus_but.idx == 2) {
+						else if (focus_but.getIdx() == 2) {
 							figs.add(new Ellipse(evt.getX(),evt.getY(), rand.nextInt(50),rand.nextInt(50),contorno, fill));
 						}
-						else if (focus_but.idx == 3) {
+						else if (focus_but.getIdx() == 3) {
 							figs.add(new Arc(evt.getX(),evt.getY(), rand.nextInt(50),rand.nextInt(50), contorno,fill,rand.nextInt(360),rand.nextInt(360)));
 						}
-						else if (focus_but.idx == 4) {
+						else if (focus_but.getIdx() == 4) {
 							figs.add(new Trian(evt.getX(),evt.getY(), rand.nextInt(50),rand.nextInt(50),contorno, fill));
 						}
 						repaint();
