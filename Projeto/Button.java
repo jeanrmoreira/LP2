@@ -4,11 +4,11 @@ import java.awt.*;
 
 public class Button implements IVisible {
 
-    public  int    idx;
+    private  int idx;
     private Figure fig;
 
     public Button (int idx, Figure fig) {
-        this.idx = idx;
+        this.setIdx(idx);
         this.fig = fig;
         this.fig.x = 4+20;
         this.fig.y = 4+20 + idx*40;
@@ -32,5 +32,14 @@ public class Button implements IVisible {
 
         this.fig.paint(g, false);
 
-	};
+	}
+	public int getIdx() {
+		return this.idx;
+	}
+
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
+
+	
 }
